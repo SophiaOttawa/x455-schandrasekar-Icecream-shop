@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/stylesheets/styles.css">
+    <title>MilkyWay Ice Cream</title>
+</head>
+<body bgcolor="#FCB500">
+    <nav>
+    <div class="flex-container">
+        <img src="./assets/images/image1.png" alt="MilkyWay Ice Cream Logo">
+    </div>
+    <div> 
+        <ul class="menu">
+            <li><a href="index.html">Splash</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="flavours.html">Flavours</a></li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .row > .column {
+      padding: 0 8px;
+    }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    .column {
+      float: left;
+      width: 25%;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #8B4708;
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1200px;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #999;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .mySlides {
+      display: none;
+    }
+    
+    .cursor {
+      cursor: pointer;
+    }
+    
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: #FCB500;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #FCB500;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    img {
+      margin-bottom: -4px;
+    }
+    
+    .caption-container {
+      text-align: center;
+      background-color: #8B4708;
+      padding: 2px 16px;
+      color: #FCB500;
+    }
+    
+    .demo {
+      opacity: 0.6;
+    }
+    
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+    
+    img.hover-shadow {
+      transition: 0.3s;
+    }
+    
+    .hover-shadow:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    </style>
+<br><br><br><br><br><br>
+
+<h2 style="text-align:center; font-family: 'Karla', sans-serif;
+font-size: 50px;
+font-weight: 800;
+color: #8B4708;">Explore Our Flavours</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="./assets/images/carousel 1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="column">
+    <img src="./assets/images/carousel 5.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 6.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 7.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./assets/images/carousel 8.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div>
+      <img src="./assets/images/carousel 1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div>
+      <img src="./assets/images/carousel 2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div>
+      <img src="./assets/images/carousel 3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div>
+      <img src="./assets/images/carousel 4.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+        <div class="numbertext">5 / 8</div>
+        <img src="./assets/images/carousel 5.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 8</div>
+        <img src="./assets/images/carousel 6.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">7 / 8</div>
+        <img src="./assets/images/carousel 7.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">8 / 8</div>
+        <img src="./assets/images/carousel 8.jpg" style="width:100%">
+      </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="./assets/images/carousel 1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Milky Way Dark Chocolate">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./assets/images/carousel 2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Mango Tango ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./assets/images/carousel 3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Peppermint Stardust">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./assets/images/carousel 4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Choco-Peanut Comet Crunch">
+    </div>
+    
+    <div class="column">
+        <img class="demo cursor" src="./assets/images/carousel 5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Citrus Nova Blast">
+    </div>
+
+    <div class="column">
+        <img class="demo cursor" src="./assets/images/carousel 6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Raspberry Solar Sorbet">
+    </div>
+
+    <div class="column">
+        <img class="demo cursor" src="./assets/images/carousel 7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Matcha Mint Meteorite">
+    </div>
+
+    <div class="column">
+        <img class="demo cursor" src="./assets/images/carousel 8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Starry Strawberry">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+  <div class="center-container">
+    <div class="scroll-container">
+      <p>
+        <h2 style="text-align:Left; font-family: 'Karla', sans-serif;
+                   font-size: 50px; font-weight: 800; color: #8B4708;">Our Flavours
+        </h2>
+          <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+              <b>Milky Way Dark Chocolate:</b> Indulge in the rich, velvety embrace of our Milky Way Dark Chocolate, where the deep cocoa notes transport your taste buds to a universe of pure decadence.
+          </font>
+          <br>
+          <br>
+          <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Celestial Cherry:</b> Our Celestial Cherry flavour bursts with the bright and fruity essence of sun-ripened cherries, creating a heavenly experience that's both sweet and refreshing.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Starry Strawberry: </b> Dive into a constellation of flavour with Starry Strawberry, where plump, ripe strawberries swirl together to create a delightful symphony of fruity goodness.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Peppermint Stardust:</b> Peppermint Stardust offers a cool, minty enchantment that sparkles with the essence of the holiday season, leaving your palate refreshed and invigorated.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Vanilla Nebula:</b> Vanilla Nebula takes you on a timeless journey with its classic, creamy vanilla flavor, a comforting and familiar sensation that's out of this world.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Pumpkin Spice Galaxy:</b> Savor the warm embrace of autumn with Pumpkin Spice Galaxy, a seasonal favorite that captures the cozy essence of pumpkin and spices, making it the perfect fall treat.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Galactic Lavender Dream:</b>  is a celestial symphony of flavour, where the soothing essence of lavender swirls among the stars, creating an ethereal and calming sensation with each indulgent bite.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Raspberry Solar Sorbet:</b> is a dazzling and mouthwatering delight that brings the vibrant flavors of summer to your palate. This sun-kissed sorbet is a symphony of sweet and tangy raspberries, capturing the essence of ripe, juicy berries basking in the sunshine.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Mango Tango Tango:</b> Immerse yourself in the tropical rhythm of Mango Tango Tango, a dance of sweet and tangy mango flavors that will transport you to an exotic paradise.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Choco-Peanut Comet Crunch: </b> Brace yourself for the explosive combination of chocolate and peanuts in Choco-Peanut Comet Crunch, a flavor-packed journey that brings together the best of both worlds.
+        </font>
+        <br>
+        <br>
+        <font face="Karla, sans-serif" style="font-size: 20px; color: #8B4708;">
+            <b>Cinnamon Spice Odyssey:</b> Embark on a flavor odyssey with Cinnamon Spice Odyssey, a warm and aromatic treat that blends the sweetness of cinnamon with a hint of spice for a tantalizing experience.
+        </font>
+      </p>
+    </div>
+  </div>
+
+<font face="Karla, sans-serif" style="font-size: 25px; color: #8B4708;">
+<h2 style= "text-align:center;">EVENT OPTIONS</h2>
+</font>
+<div class="accordion-container">
+<button class="accordion"> 1. Ice Cream Station + Scooper
+
+    <span class="arrow">&#9660;</span>
+
+</button>
+
+<div style="width: 68%;" class="panel">
+
+  <p>1. Ice Cream Station + Scooper
+
+    Need a sweet treat for a wedding reception, corporate event or birthday party? We can send a scooper to your venue to serve our ice cream to your guests out of either our cart or branded coolers.
+    Menu Options: You may choose one of the following options (waffle cones can be added to scoops only)
+    Kids Scoop (1 flavour only) $4
+    Single Scoop (1 or 2 flavours) $5.50
+    Double Scoop (1 or 2 flavours) $7
+    Sundae $8
+    Waffle Cone $1.60
+    Minimum event charge: $400* (including event fee)
+    In order to reach this minimum would mean choosing at least 70 kids scoops, 50 single scoops or 35 Sundaes.
+    Event Fee: $125-150*
+    This includes up to 2 scoopers for 2 hours of service plus transportation* within Vancouver and is included in the minimum event price.
+    </p>
+</div>
+</div>
+<br>
+<br>
+<div class="accordion-container">
+<button class="accordion">2. Self-Scoop
+
+    <span class="arrow">&#9660;</span>
+
+</button>
+<div class="panel">
+  <p>2. Self-Scoop
+
+    Looking for more than just pints but don’t need the full ice cream station? If you are having a larger event and have guests that are willing to volunteer their scooping arm, larger tubs are a great option.
+    1 gallon - $60 (~15-20 servings)
+    3 gallon - $150(~50-65 servings)
+    Plus Event Supplies (optional): approx. $25-100 depending on event size *Event Supplies includes cups, spoons, and the rental of scoops and coolers (plus an additional $100 refundable deposit for coolers & $10 per scoop)
+    If you go this route, we recommend storing the ice cream in a freezer right up until serving. If you are unable to do so, dry ice in the cooler is another option to ensure that the ice cream doesn’t melt beforehand and also keeps it solid during the event
+    </p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>// JavaScript code
+    document.querySelector('.accordion').addEventListener('click', function() {
+      this.classList.toggle('active');
+      var arrow = this.querySelector('.arrow');
+      arrow.classList.toggle('rotate');
+    });
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY -- Flavor of the Month: CINNAMON SPICE ODYSSEY
+
+    </marquee>
+  </div>
+  <br>
+  <br>
+<footer class="footer_content">
+    <div class="social-icons">
+        <div>
+            <img src="./assets/images/instagram.png" alt="Instagram">
+        </div>
+        <div>
+            <img class="facebook-icon" src="./assets/images/yellow facebook .png" alt="Facebook">
+        </div>
+    </div>
+    <div class="footer-text">
+        1122 Frozen street, Ottawa ON K2T 0K9 <Br> Phone: (613) 222-3434
+    </div>
+
+</body>
+
+
+</html>
